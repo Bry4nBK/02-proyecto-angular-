@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 interface MenuOption {
   ladeb: string;
@@ -9,14 +10,14 @@ interface MenuOption {
 
 @Component({
   selector: 'gifs-side-menu-opcions',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './gifs-side-menu-opcions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GifsSideMenuOpcionsComponent {
   menuOptions: MenuOption[] = [
     {
-      icon: 'fa-solid fa-chart-line',
+      icon: 'fa-solid fa-circle-user',
       ladeb: 'Trending',
       subLadel: 'GiFS Populares',
       router: '/dashboard/trending',
