@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { GifsSideMenuHeaderComponent } from "./gifs-side-menu-header/gifs-side-menu-header.component";
 import { GifsSideMenuOpcionsComponent } from "./gifs-side-menu-opcions/gifs-side-menu-opcions.component";
+import { GifService } from '../../services/gifs.service';
 
 
 @Component({
@@ -9,4 +10,7 @@ import { GifsSideMenuOpcionsComponent } from "./gifs-side-menu-opcions/gifs-side
   templateUrl: './side-menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SideMenuComponent { }
+export class SideMenuComponent {
+  GifService = inject(GifService);
+
+ }
